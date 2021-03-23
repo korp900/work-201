@@ -37,7 +37,7 @@ if(btn!=undefined){
             btn.click();
         }
     },300);
-}else if(location.hostname == "www.yandex.ru"){ // Страница выдачи поисковых результатов
+}else if(location.hostname == "yandex.ru"){ // Страница выдачи поисковых результатов
     site = getCookie("site");
     let nextYandexPage = true;
     let currentYandexPage = document.getElementsByClassName('YyVfkd')[0].innerText;
@@ -50,10 +50,10 @@ if(btn!=undefined){
         }
     }
     if(nextYandexPage && currentYandexPage<11) setTimeout(()=>{document.getElementByClassName('pager_item_kind_next').click()},1500);
-    else if(currentYandexPage == 11) location.href = "https://www.yandex.ru/";
+    else if(currentYandexPage == 11) location.href = "https://yandex.ru/";
 }else{ // Мы находимся на найденом сайте
     setInterval(()=>{
-        if(Math.random()>=0.8) location.href = "https://www.yandex.ru/";
+        if(Math.random()>=0.8) location.href = "https://yandex.ru/";
         let link = links[Math.floor(Math.random()*links.length)];
         if(link.href.indexOf(location.hostname)!=-1){
            link.click();}
