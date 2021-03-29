@@ -25,8 +25,8 @@ let keywords = sites[site];
 let randomIndex = Math.floor(Math.random()*keywords.length);
 let keyword = keywords[randomIndex];
 
-let YandexInput = document.getElementsByClassName("input_control input_input mini-suggest_input");
-let btn = document.getElementsByClassName("button_theme_websearch");
+let YandexInput = document.getElementsByClassName("input_control input_input mini-suggest_input")[0];
+let btn = document.getElementsByClassName("button_theme_websearch")[0];
 let links = document.links;
 if(btn!=undefined){
     let i = 0;
@@ -40,7 +40,7 @@ if(btn!=undefined){
 }else if(location.hostname == "yandex.ru"){ // Страница выдачи поисковых результатов
     site = getCookie("site");
     let nextYandexPage = true;
-    let currentYandexPage = document.getElementsByClassName('YyVfkd')[0].innerText;
+    let currentYandexPage = document.getElementsByClassName('pager__item__corrent__yes')[0].innerContent;
     for(let i=0; i<links.length; i++){
         let link = links[i];
         if(link.href.indexOf(site)!=-1){
